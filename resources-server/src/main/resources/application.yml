@@ -1,0 +1,13 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: resource-springboot
+
+  main:
+    allow-bean-definition-overriding: true   #允许bean覆盖
+
+mybatis:
+  mapper-locations: mapper/*.xml
+

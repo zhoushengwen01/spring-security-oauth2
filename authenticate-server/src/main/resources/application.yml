@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: security-springboot
+  mvc:
+    view:
+      prefix: /WEB-INF/view/
+      suffix: .jsp
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false
+    username: root
+    password: root
+
+  main:
+    allow-bean-definition-overriding: true   #允许bean覆盖
+
+mybatis:
+  mapper-locations: mapper/*.xml
+
