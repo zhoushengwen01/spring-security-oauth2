@@ -28,9 +28,8 @@ public class UserService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
         UserDto userDto = userDao.getUserByUsername(username);
-        if (userDto == null) {
-            return null;
-        }
+        if (userDto == null)
+            throw new UsernameNotFoundException(username);
         List<PermissionDto> permissionDtos = userDao.findPermissionsByUserId(userDto.getId());
         List<String> permissions = new ArrayList<>();
         permissionDtos.forEach(c -> permissions.add(c.getCode()));
