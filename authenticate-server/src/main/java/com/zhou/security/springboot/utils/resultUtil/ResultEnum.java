@@ -1,33 +1,19 @@
 package com.zhou.security.springboot.utils.resultUtil;
 
 public enum ResultEnum {
+    SUCCESS("成功", true, 200),
+    FAIL("失败", false, 500),
+    LOGIN_SUCCESS("登录成功", true, 0),
+    LOGIN_FAIL("登录失败", false, 1);
 
-    SUCCESS("200", "成功"),
-    ERROR("-1", "失败");
+    public int code;
+    public String msg;
+    public boolean success;
 
-    private String code;
-    private String msg;
-
-    ResultEnum(String code, String msg) {
+    ResultEnum(String msg, boolean success, int code) {
         this.code = code;
+        this.success = success;
         this.msg = msg;
     }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
-
 
 }

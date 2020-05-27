@@ -84,11 +84,11 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
     <select id="pageQuery" resultType="com.zhou.security.springboot.model.Role">
-        select SQL_CALC_FOUND_ROWS
+        select
         <include refid="Base_Column_List"/>
         from sys_role limit #{start},#{pageSize}
     </select>
     <select id="queryTotal" resultType="java.lang.Long">
-        select found_rows()
+        select count(1) from sys_role
     </select>
 </mapper>

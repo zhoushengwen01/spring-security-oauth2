@@ -21,7 +21,7 @@ public class LoginController {
     @ResponseBody
     public ReturnResult loginSuccess() {
         String username = getUsername();
-        return new ReturnResult(true, username, "登录成功");
+        return ReturnResult.success();
     }
 
 

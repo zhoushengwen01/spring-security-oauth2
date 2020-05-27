@@ -3,6 +3,7 @@ package com.zhou.security.springboot.controller;
 
 import com.zhou.security.springboot.model.Role;
 import com.zhou.security.springboot.service.RoleService;
+import com.zhou.security.springboot.utils.resultUtil.ResultEnum;
 import com.zhou.security.springboot.utils.resultUtil.ReturnResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +22,7 @@ public class RoleController {
     ReturnResult pageQuery(@PathVariable int currentPage, @PathVariable int pageSize) {
         List<Role> roles = roleService.pageQuery(currentPage, pageSize);
         Long total = roleService.queryTotal();
-        return ReturnResult.success(total, roles);
+        return  new ReturnResult(total,roles, ResultEnum.SUCCESS);
     }
 
 
@@ -31,7 +32,7 @@ public class RoleController {
         if (i == 1) {
             return ReturnResult.success();
         } else {
-            return ReturnResult.error();
+            return ReturnResult.fail();
         }
 
 
@@ -43,7 +44,7 @@ public class RoleController {
         if (insert == 1) {
             return ReturnResult.success();
         } else {
-            return ReturnResult.error();
+            return ReturnResult.fail();
         }
     }
 
@@ -58,7 +59,7 @@ public class RoleController {
         if (update == 1) {
             return ReturnResult.success();
         } else {
-            return ReturnResult.error();
+            return ReturnResult.fail();
         }
     }
 
