@@ -18,17 +18,17 @@ public class RoleServiceImpl implements RoleService {
 
 
     @Override
-    public List<Role> pageQuery(int currentPage, int pageSize) {
+    public List<Role> pageQuery(int currentPage, int pageSize, String role) {
         int start = 0;
         if (currentPage > 0) {
             start = (currentPage - 1) * pageSize;
         }
-        return roleMapper.pageQuery(start, pageSize);
+        return roleMapper.pageQuery(start, pageSize,role);
     }
 
     @Override
-    public Long queryTotal() {
-        return roleMapper.queryTotal();
+    public Long queryTotal(String role) {
+        return roleMapper.queryTotal(role);
     }
 
     @Override

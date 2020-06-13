@@ -18,11 +18,11 @@ public class RoleController {
     private RoleService roleService;
 
 
-    @GetMapping("/pageQuery/{currentPage}/{pageSize}")
-    ReturnResult pageQuery(@PathVariable int currentPage, @PathVariable int pageSize) {
-        List<Role> roles = roleService.pageQuery(currentPage, pageSize);
-        Long total = roleService.queryTotal();
-        return  new ReturnResult(total,roles, ResultEnum.SUCCESS);
+    @GetMapping("/pageQuery")
+    ReturnResult pageQuery(int currentPage, int pageSize, String role) {
+        List<Role> roles = roleService.pageQuery(currentPage, pageSize, role);
+        Long total = roleService.queryTotal(role);
+        return new ReturnResult(total, roles, ResultEnum.SUCCESS);
     }
 
 

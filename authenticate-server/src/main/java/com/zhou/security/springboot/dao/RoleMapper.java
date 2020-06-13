@@ -2,6 +2,7 @@ package com.zhou.security.springboot.dao;
 
 import com.zhou.security.springboot.model.Role;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -14,9 +15,9 @@ import java.util.List;
 @Repository
 @Mapper
 public interface RoleMapper {
-    List<Role> pageQuery(int start, int pageSize);
+    List<Role> pageQuery(int start, int pageSize, String role);
 
-    long queryTotal();
+    long queryTotal(@Param("role") String role);
 
     int deleteByPrimaryKey(Integer id);
 

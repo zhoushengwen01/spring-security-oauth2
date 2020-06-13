@@ -10,17 +10,6 @@ spring:
     username: root
     password: root
 
-    resources:
-      static-locations: classpath:/bootstrap/
-
-    thymeleaf:
-      prefix: classpath:/templates/
-      suffix: .html
-      mode: HTML5
-      content-type: text/html
-      #set to false for hot refresh
-      cache: false
-
   main:
     allow-bean-definition-overriding: true   #允许bean覆盖
 

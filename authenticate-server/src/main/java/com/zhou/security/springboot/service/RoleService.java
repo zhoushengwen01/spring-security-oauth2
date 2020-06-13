@@ -7,9 +7,9 @@ import java.util.List;
 
 public interface RoleService {
 
-    List<Role> pageQuery(int currentPage, int pageSize);
+    List<Role> pageQuery(int currentPage, int pageSize, String role);
 
-    Long queryTotal();
+    Long queryTotal(String role);
 
     int deleteById(Integer id);
 

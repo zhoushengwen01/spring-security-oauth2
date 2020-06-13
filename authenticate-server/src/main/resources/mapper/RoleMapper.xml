@@ -86,9 +86,16 @@
     <select id="pageQuery" resultType="com.zhou.security.springboot.model.Role">
         select
         <include refid="Base_Column_List"/>
-        from sys_role limit #{start},#{pageSize}
+        from sys_role
+        <if test="role !=null and role!=''">
+            where role like concat('%',#{role},'%')
+        </if>
+        limit #{start},#{pageSize}
     </select>
     <select id="queryTotal" resultType="java.lang.Long">
         select count(1) from sys_role
+        <if test="role !=null and role!=''">
+            where role like concat('%',#{role},'%')
+        </if>
     </select>
 </mapper>

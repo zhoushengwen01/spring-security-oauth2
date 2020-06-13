@@ -27,7 +27,6 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-
         <!-- 以下是jsp依赖-->
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -38,12 +37,6 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
-        </dependency>
-
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
 
         <dependency>
@@ -114,23 +107,6 @@
             </plugin>
         </plugins>
 
-        <resources>
-            <resource>
-                <directory>src/main/webapp</directory>
-                <!--注意此次必须要放在此目录下才能被访问到 -->
-                <targetPath>META-INF</targetPath>
-                <includes>
-                    <include>**/**</include>
-                </includes>
-            </resource>
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-                <includes>
-                    <include>**/*</include>
-                </includes>
-            </resource>
-        </resources>
     </build>
 
 

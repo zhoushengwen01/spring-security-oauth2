@@ -72,7 +72,7 @@ public class LoginController {
         if (principal == null) {
             username = "匿名";
         }
-        if (principal instanceof org.springframework.security.core.userdetails.UserDetails) {
+        if (principal instanceof UserDetails) {
             UserDetails userDetails = (UserDetails) principal;
             username = userDetails.getUsername();
         } else {
